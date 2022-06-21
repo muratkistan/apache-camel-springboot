@@ -19,7 +19,6 @@ public class LegacyFileRoute extends RouteBuilder {
     public void configure() throws Exception {
 
         Logger logger = LoggerFactory.getLogger(getClass());
-        String asd;
         from("file:src/data/input?fileName=inputFile.csv")
                 .routeId("legacyFileMoveRouteId")
                 .split(body().tokenize("\n",1,true))

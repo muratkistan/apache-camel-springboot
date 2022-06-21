@@ -29,6 +29,18 @@ public class NewRestRoute extends RouteBuilder {
 //                .convertBodyTo(String.class)
 //                .to("file:src/data/output?fileName=outputFile.csv&fileExist=append&AppendChars=\\n");
 
+//        rest("/masterclass")
+//                .produces("application/json")
+//                .post("/nameAddress").type(NameAddress.class).route()
+//                .routeId("newRestRouteId")
+//                .log(LoggingLevel.INFO,"${body}")
+////                .process(new InboundMessageProcessor())
+////                .log(LoggingLevel.INFO," Transformed Body : ${body}")
+////                .convertBodyTo(String.class)
+////                .to("file:src/data/output?fileName=outputFile.csv&fileExist=append&AppendChars=\\n");
+//                .to("jpa:"+NameAddress.class.getName());
+
+
         rest("/masterclass")
                 .produces("application/json")
                 .post("/nameAddress").type(NameAddress.class).route()
@@ -38,6 +50,7 @@ public class NewRestRoute extends RouteBuilder {
 //                .log(LoggingLevel.INFO," Transformed Body : ${body}")
 //                .convertBodyTo(String.class)
 //                .to("file:src/data/output?fileName=outputFile.csv&fileExist=append&AppendChars=\\n");
-                .to("jpa:"+NameAddress.class.getName());
+                .to("activemq:queue:nameaddressqueue?exchangepattern=InOnly");
+//                .to("jpa:"+NameAddress.class.getName());
     }
 }
