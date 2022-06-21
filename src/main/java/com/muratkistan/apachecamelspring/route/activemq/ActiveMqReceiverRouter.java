@@ -1,4 +1,4 @@
-package com.muratkistan.apachecamelspring.route;
+package com.muratkistan.apachecamelspring.route.activemq;
 
 import org.apache.camel.builder.RouteBuilder;
 import org.springframework.stereotype.Component;
