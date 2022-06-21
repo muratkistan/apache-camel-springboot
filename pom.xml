@@ -46,6 +46,13 @@
 			<version>3.12.0</version>
 		</dependency>
 
+		<!-- Rabbit MQ -->
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-rabbitmq</artifactId>
+			<version>3.12.0</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.apache.camel.springboot</groupId>
 			<artifactId>camel-jpa-starter</artifactId>
